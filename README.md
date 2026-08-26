@@ -38,7 +38,7 @@ acp-mcp-agent (lay-up) ──► analysis model ──► Mechanical (BC / mesh 
 
 | | |
 |---|---|
-| ANSYS | with ACP. Developed and verified against **2026 R1** (`AWP_ROOT261`) |
+| ANSYS | with ACP. Developed and verified against ( verifed **2026 R1** (`AWP_ROOT261`) |
 | Python | 3.10+ for the server side — whichever interpreter your MCP client launches |
 | Packages | `mcp`, `pydantic`, `ansys-acp-core` (see `requirements.txt`) |
 | OS | Windows. The bridge itself is portable, the documented paths are not |
