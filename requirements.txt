@@ -1,0 +1,14 @@
+# Python side of the headless server. Install into the SAME interpreter that
+# the MCP client launches (see mcp_config.example.json).
+#
+# The GUI bridge has no requirements: it runs inside ACP-Pre's own embedded
+# Python and uses only the standard library plus wx, which ACP-Pre provides.
+
+mcp>=1.2.0
+pydantic>=2.6
+ansys-acp-core>=0.3.2
+
+# ANSYS itself is NOT a pip package. ansys-acp-core launches the ACP gRPC
+# server from a local ANSYS installation. Developed and verified against
+# 2026 R1 only; older releases are untested, which is what the CANDIDATES
+# mechanism in acp_mcp.py exists for.

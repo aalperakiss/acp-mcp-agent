@@ -1,0 +1,443 @@
+PyACP API report
+generated: 2026-08-25 13:42
+python:    3.13.9
+
+ansys-acp-core version: 0.3.2
+
+== module-level entry points ==
+  ACPInstance
+  ConnectLaunchConfig
+  ConnectLocalLaunchConfig
+  DirectLaunchConfig
+  DockerComposeLaunchConfig
+  LaunchMode
+  launch_acp
+
+== ACP session object ==
+  check(timeout: 'float | None' = None) -> 'bool'
+  clear() -> 'None'
+  download_file(remote_path: '_PATH', local_path: '_PATH') -> 'None'
+  import_model(path: '_PATH', *, name: 'str | None' = None, format: 'str' = 'acp:h5', **kwargs: 'Any') -> 'Model'
+  is_remote(?)
+  models(?)
+  restart(stop_timeout: 'float | None' = None, start_timeout: 'float | None' = None) -> 'None'
+  server_version(?)
+  start(timeout: 'float | None' = None) -> 'None'
+  stop(*, timeout: 'float | None' = None) -> 'None'
+  upload_file(local_path: '_PATH') -> 'pathlib.PurePath'
+  wait(timeout: 'float') -> 'None'
+
+== loading model: <model path removed> ==
+  loaded OK
+
+== model: export / save / update methods ==
+  elemental_data(?)
+  export_analysis_model(path: '_PATH') -> 'None'
+  export_hdf5_composite_cae(path: '_PATH', *, remove_midside_nodes: 'bool' = True, layup_representation_3d: 'bool' = False, offset_type: 'OffsetType' = <OffsetType.BOTTOM_OFFSET: 'bottom_offset'>, all_elements: 'bool' = True, element_sets: 'Sequence[ElementSet | OrientedSelectionSet]' = (), all_plies: 'bool' = True, plies: 'Sequence[ModelingGroup | ModelingPly]' = (), ascii_encoding: 'bool' = False) -> 'None'
+  export_materials(path: '_PATH') -> 'None'
+  export_modeling_ply_geometries(path: '_PATH', *, modeling_plies: 'Iterable[ModelingPly] | None' = None, format: 'PlyGeometryExportFormat' = <PlyGeometryExportFormat.STEP: 'step'>, offset_type: 'OffsetType' = <OffsetType.MIDDLE_OFFSET: 'middle_offset'>, include_surface: 'bool' = True, include_boundary: 'bool' = True, include_first_material_direction: 'bool' = True, include_second_material_direction: 'bool' = True, arrow_length: 'float | None' = None, arrow_type: 'ArrowType' = <ArrowType.NO_ARROW: 'no_arrow'>) -> 'None'
+  export_shell_composite_definitions(path: '_PATH') -> 'None'
+  nodal_data(?)
+  save(path: '_PATH', *, save_cache: 'bool' = True) -> 'None'
+  unit_system(?)
+  update(*, relations_only: 'bool' = False) -> 'None'
+
+== model: all public members ==
+  angle_tolerance
+  average_element_size
+  boolean_selection_rules
+  cad_geometries
+  create_boolean_selection_rule
+  create_cad_geometry
+  create_cut_off_selection_rule
+  create_cylindrical_selection_rule
+  create_edge_set
+  create_element_set
+  create_fabric
+  create_field_definition
+  create_geometrical_selection_rule
+  create_imported_modeling_group
+  create_imported_solid_model
+  create_lookup_table_1d
+  create_lookup_table_3d
+  create_material
+  create_modeling_group
+  create_oriented_selection_set
+  create_parallel_selection_rule
+  create_rosette
+  create_sampling_point
+  create_section_cut
+  create_sensor
+  create_solid_model
+  create_spherical_selection_rule
+  create_stackup
+  create_sublaminate
+  create_tube_selection_rule
+  create_variable_offset_selection_rule
+  create_virtual_geometry
+  cut_off_selection_rules
+  cylindrical_selection_rules
+  delete
+  draping_offset_correction
+  edge_sets
+  element_sets
+  elemental_data
+  export_analysis_model
+  export_hdf5_composite_cae
+  export_materials
+  export_modeling_ply_geometries
+  export_shell_composite_definitions
+  fabrics
+  field_definitions
+  force_disable_result_extrapolation
+  geometrical_selection_rules
+  import_hdf5_composite_cae
+  import_materials
+  imported_modeling_groups
+  imported_solid_models
+  lookup_tables_1d
+  lookup_tables_3d
+  materials
+  mesh
+  minimum_analysis_ply_thickness
+  modeling_groups
+  name
+  nodal_data
+  oriented_selection_sets
+  parallel_selection_rules
+  parent
+  relative_thickness_tolerance
+  rosettes
+  sampling_points
+  save
+  section_cuts
+  sensors
+  shell_mesh
+  solid_mesh
+  solid_models
+  spherical_selection_rules
+  stackups
+  sublaminates
+  tube_selection_rules
+  unit_system
+  update
+  use_nodal_thicknesses
+  variable_offset_selection_rules
+  virtual_geometries
+
+== modeling_groups: 1 item(s) ==
+  ModelingGroup.1
+
+== materials: 2 item(s) ==
+  Structural Steel
+  Carbon Fiber (230 GPa)
+
+== fabrics: 1 item(s) ==
+  Fabric.1
+
+== rosettes: 2 item(s) ==
+  Global Coordinate System
+  Rosette.1
+
+== oriented_selection_sets: 1 item(s) ==
+  OrientedSelectionSet.1
+
+== element_sets: 1 item(s) ==
+  All_Elements
+
+== sample modeling ply: ModelingPly.1 ==
+  active = True
+  add_selection_rule(selection_rule: '_LINKABLE_SELECTION_RULE_TYPES', *, operation_type: 'BooleanOperationType' = <BooleanOperationType.INTERSECT: 'intersect'>, template_rule: 'bool' = False, parameter_1: 'float' = 0.0, parameter_2: 'float' = 0.0) -> ansys.acp.core._tree_objects.linked_selection_rule.LinkedSelectionRule   [method]
+  add_taper_edge(edge_set: 'EdgeSet', *, angle: 'float', offset: 'float') -> ansys.acp.core._tree_objects.modeling_ply.TaperEdge   [method]
+  auto_draping_direction = True
+  clone(*, unlink: 'bool' = False) -> 'Self'   [method]
+  delete() -> 'None'   [method]
+  draping_angle_1_field = None
+  draping_angle_2_field = None
+  draping_direction = (1.0, 0.0, 0.0)
+  draping_mesh_size = 0.0
+  draping_seed_point = (0.0, 0.0, 0.0)
+  draping_thickness_correction = True
+  draping_type = <DrapingType.NO_DRAPING: 'no_draping'>
+  elemental_data = ModelingPlyElementalData(element_labels=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F4551D7550>, normal=<ansys.acp.core._tree_objects._elemental_or_nodal_data.VectorData object at 0x000001F455163750>, orientation=<ansys.acp.core._tree_objects._elemental_or_nodal_data.VectorData object at 0x000001F45383B100>, reference_direction=<ansys.acp.core._tree_objects._elemental_or_nodal_data.VectorData object at 0x000001F4552943E0>, fiber_direction=<ansys.acp.core._tree_objects._elemental_or_nodal_data.VectorData object at 0x000001F45521F650>, draped_fiber_direction=<ansys.acp.core._tree_objects._elemental_or_nodal_data.VectorData object at 0x000001F455211F20>, transverse_direction=<ansys.acp.core._tree_objects._elemental_or_nodal_data.VectorData object at 0x000001F455212140>, draped_transverse_direction=<ansys.acp.core._tree_objects._elemental_or_nodal_data.VectorData object at 0x000001F4551D6A50>, thickness=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F4551A3980>, relative_thickness_correction=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F4551A3B60>, design_angle=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F4552474D0>, shear_angle=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F4552473F0>, draped_fiber_angle=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F45519FD40>, draped_transverse_angle=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F45522C410>, area=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F45522C4D0>, price=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F455173280>, volume=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F4551731D0>, mass=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F4552A87D0>, offset=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F4552A8690>, cog=<ansys.acp.core._tree_objects._elemental_or_nodal_data.VectorData object at 0x000001F4551D7650>)
+  global_ply_nr = 1
+  id = 'ModelingPly.1'
+  mesh = MeshData(node_labels=array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+       18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
+       35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
+       52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68,
+       69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85,
+       86, 87, 88, 89, 90, 91, 92, 93, 94, 95], dtype=int32), node_coordinates=array([[-13.88888889,   0.        ,  10.        ],
+       [-13.89018498,   0.        ,   7.50117451],
+       [-16.66707081,   0.        ,   7.49785601],
+       [-16.66666667,   0.        ,  10.        ],
+       [-19.44444444,   0.        ,  10.        ],
+       [-19.44478131,   0.        ,   7.49955388],
+       [ -5.55555556,   0.        ,  10.        ],
+       [ -8.33333333,   0.        ,  10.        ],
+       [ -8.33491752,   0.        ,   7.50121402],
+       [-11.11183572,   0.        ,   7.50077123],
+       [-11.11111111,   0.        ,  10.        ],
+       [  0.        ,   0.        ,   7.5       ],
+       [  0.        ,   0.        ,  10.        ],
+       [ -2.77777778,   0.        ,  10.        ],
+       [ -2.77827832,   0.        ,   7.50363338],
+       [ -5.55547335,   0.        ,   7.50072434],
+       [-50.        ,   0.        ,  10.        ],
+       [-47.22222594,   0.        ,   7.49638108],
+       [-47.22222222,   0.        ,  10.        ],
+       [-50.        ,   0.        ,   7.5       ],
+       [-50.        ,   0.        ,   5.        ],
+       [-47.22025372,   0.        ,   5.00164213],
+       [ -5.55555556,   0.        ,   0.        ],
+       [ -5.55524612,   0.        ,   2.50171277],
+       [ -2.77723962,   0.        ,   2.50157319],
+       [ -2.77777778,   0.        ,   0.        ],
+       [  0.        ,   0.        ,   2.5       ],
+       [  0.        ,   0.        ,   0.        ],
+       [-13.88888889,   0.        ,   0.        ],
+       [-11.11111111,   0.        ,   0.        ],
+       [-11.11242985,   0.        ,   2.49886401],
+       [ -8.33267928,   0.        ,   2.50076004],
+       [ -8.33333333,   0.        ,   0.        ],
+       [-19.4460819 ,   0.        ,   2.49793057],
+       [-19.44444444,   0.        ,   0.        ],
+       [-16.66666667,   0.        ,   0.        ],
+       [-16.66520802,   0.        ,   2.49523213],
+       [-13.88956469,   0.        ,   2.50438295],
+       [-27.77777778,   0.        ,   0.        ],
+       [-27.77520169,   0.        ,   2.49987997],
+       [-25.00149908,   0.        ,   2.4998617 ],
+       [-25.        ,   0.        ,   0.        ],
+       [-22.22222222,   0.        ,   0.        ],
+       [-22.22340561,   0.        ,   2.50268198],
+       [-11.11203334,   0.        ,   5.00052834],
+       [ -8.33378392,   0.        ,   5.00049418],
+       [ -5.55669757,   0.        ,   5.0021298 ],
+       [-22.2243406 ,   0.        ,   5.00202455],
+       [-19.44433492,   0.        ,   4.99559279],
+       [-16.66689107,   0.        ,   5.00011596],
+       [-13.888296  ,   0.        ,   5.00380833],
+       [-33.33499747,   0.        ,   5.00110421],
+       [-30.55395637,   0.        ,   5.00009915],
+       [-27.77613903,   0.        ,   5.00017355],
+       [-25.00048794,   0.        ,   5.00119079],
+       [-44.44510338,   0.        ,   4.99725083],
+       [-41.66513155,   0.        ,   5.00215753],
+       [-38.88970941,   0.        ,   4.99936348],
+       [-36.11007851,   0.        ,   4.99995868],
+       [-44.44418057,   0.        ,   7.49868753],
+       [-44.44444444,   0.        ,  10.        ],
+       [ -2.77861289,   0.        ,   5.0017605 ],
+       [  0.        ,   0.        ,   5.        ],
+       [-36.11111111,   0.        ,  10.        ],
+       [-36.11366854,   0.        ,   7.50129616],
+       [-38.88757587,   0.        ,   7.4972426 ],
+       [-38.88888889,   0.        ,  10.        ],
+       [-41.66666667,   0.        ,  10.        ],
+       [-41.66423946,   0.        ,   7.50213925],
+       [-27.77777778,   0.        ,  10.        ],
+       [-30.55555556,   0.        ,  10.        ],
+       [-30.54810006,   0.        ,   7.49930942],
+       [-33.34017081,   0.        ,   7.50098248],
+       [-33.33333333,   0.        ,  10.        ],
+       [-22.22304587,   0.        ,   7.50108819],
+       [-22.22222222,   0.        ,  10.        ],
+       [-25.        ,   0.        ,  10.        ],
+       [-24.99851656,   0.        ,   7.50020742],
+       [-27.77743281,   0.        ,   7.50026327],
+       [-36.11111111,   0.        ,   0.        ],
+       [-33.33333333,   0.        ,   0.        ],
+       [-33.33336587,   0.        ,   2.49978611],
+       [-30.55572253,   0.        ,   2.49986226],
+       [-30.55555556,   0.        ,   0.        ],
+       [-41.66740593,   0.        ,   2.50054752],
+       [-41.66666667,   0.        ,   0.        ],
+       [-38.88888889,   0.        ,   0.        ],
+       [-38.88861358,   0.        ,   2.49857128],
+       [-36.11149952,   0.        ,   2.50056562],
+       [-50.        ,   0.        ,   0.        ],
+       [-47.22381031,   0.        ,   2.49840156],
+       [-50.        ,   0.        ,   2.5       ],
+       [-47.22222222,   0.        ,   0.        ],
+       [-44.44444444,   0.        ,   0.        ],
+       [-44.44433817,   0.        ,   2.49944902]]), element_labels=array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+       18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
+       35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
+       52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68,
+       69, 70, 71, 72], dtype=int32), element_types=array([126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126,
+       126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126,
+       126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126,
+       126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126,
+       126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126,
+       126, 126, 126, 126, 126, 126, 126], dtype=int32), element_nodes=array([79, 88, 81, 80, 37, 50, 44, 30,  0,  1,  2,  3, 30, 44, 45, 31,  3,
+        2,  5,  4, 80, 81, 82, 83, 31, 45, 46, 23, 83, 82, 39, 38, 17, 59,
+       55, 21, 24, 23, 46, 61,  6, 15,  8,  7, 93, 94, 84, 85, 40, 54, 47,
+       43, 85, 84, 87, 86, 43, 47, 48, 33,  7,  8,  9, 10, 33, 48, 49, 36,
+       10,  9,  1,  0, 86, 87, 88, 79, 36, 49, 50, 37, 12, 11, 14, 13, 89,
+       91, 90, 92, 91, 20, 21, 90, 88, 58, 51, 81, 81, 51, 52, 82, 92, 90,
+       94, 93, 82, 52, 53, 39, 13, 14, 15,  6, 39, 53, 54, 40, 16, 18, 17,
+       19, 90, 21, 55, 94, 94, 55, 56, 84, 19, 17, 21, 20, 84, 56, 57, 87,
+       87, 57, 58, 88, 67, 68, 59, 60, 60, 59, 17, 18, 22, 23, 24, 25, 27,
+       25, 24, 26, 26, 24, 61, 62, 11, 62, 61, 14, 28, 37, 30, 29, 63, 64,
+       65, 66, 66, 65, 68, 67, 29, 30, 31, 32, 32, 31, 23, 22, 69, 78, 71,
+       70, 78, 53, 52, 71, 42, 43, 33, 34, 78, 77, 54, 53, 34, 33, 36, 35,
+       72, 51, 58, 64, 71, 52, 51, 72, 65, 57, 56, 68, 70, 71, 72, 73, 65,
+       64, 58, 57, 73, 72, 64, 63, 35, 36, 37, 28, 68, 56, 55, 59, 15, 46,
+       45,  8,  4,  5, 74, 75, 14, 61, 46, 15, 75, 74, 77, 76,  9, 44, 50,
+        1, 38, 39, 40, 41,  9,  8, 45, 44, 41, 40, 43, 42,  2, 49, 48,  5,
+        2,  1, 50, 49, 74, 47, 54, 77, 76, 77, 78, 69, 74,  5, 48, 47],
+      dtype=int32), element_nodes_offsets=array([  0,   4,   8,  12,  16,  20,  24,  28,  32,  36,  40,  44,  48,
+        52,  56,  60,  64,  68,  72,  76,  80,  84,  88,  92,  96, 100,
+       104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 148, 152,
+       156, 160, 164, 168, 172, 176, 180, 184, 188, 192, 196, 200, 204,
+       208, 212, 216, 220, 224, 228, 232, 236, 240, 244, 248, 252, 256,
+       260, 264, 268, 272, 276, 280, 284], dtype=int32))
+  name = 'ModelingPly.1'
+  nodal_data = ModelingPlyNodalData(node_labels=<ansys.acp.core._tree_objects._elemental_or_nodal_data.ScalarData object at 0x000001F45520AB10>, ply_offset=<ansys.acp.core._tree_objects._elemental_or_nodal_data.VectorData object at 0x000001F4551A3B60>)
+  number_of_layers = 1
+  oriented_selection_sets = <LinkedObjectList([<OrientedSelectionSet with id 'OrientedSelectionSet.1'>])>
+  parent = <ModelingGroup with id 'ModelingGroup.1'>
+  ply_angle = 0.0
+  ply_material = <Fabric with id 'Fabric.1'>
+  production_plies = <Mapping[ProductionPly] with keys ['ProductionPly']>
+  selection_rules = <EdgePropertyList[LinkedSelectionRule] with parent <ModelingPly with id 'ModelingPly.1'>, entries []>
+  shell_mesh = MeshData(node_labels=array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+       18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
+       35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
+       52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68,
+       69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85,
+       86, 87, 88, 89, 90, 91, 92, 93, 94, 95], dtype=int32), node_coordinates=array([[-13.88888889,   0.        ,  10.        ],
+       [-13.89018498,   0.        ,   7.50117451],
+       [-16.66707081,   0.        ,   7.49785601],
+       [-16.66666667,   0.        ,  10.        ],
+       [-19.44444444,   0.        ,  10.        ],
+       [-19.44478131,   0.        ,   7.49955388],
+       [ -5.55555556,   0.        ,  10.        ],
+       [ -8.33333333,   0.        ,  10.        ],
+       [ -8.33491752,   0.        ,   7.50121402],
+       [-11.11183572,   0.        ,   7.50077123],
+       [-11.11111111,   0.        ,  10.        ],
+       [  0.        ,   0.        ,   7.5       ],
+       [  0.        ,   0.        ,  10.        ],
+       [ -2.77777778,   0.        ,  10.        ],
+       [ -2.77827832,   0.        ,   7.50363338],
+       [ -5.55547335,   0.        ,   7.50072434],
+       [-50.        ,   0.        ,  10.        ],
+       [-47.22222594,   0.        ,   7.49638108],
+       [-47.22222222,   0.        ,  10.        ],
+       [-50.        ,   0.        ,   7.5       ],
+       [-50.        ,   0.        ,   5.        ],
+       [-47.22025372,   0.        ,   5.00164213],
+       [ -5.55555556,   0.        ,   0.        ],
+       [ -5.55524612,   0.        ,   2.50171277],
+       [ -2.77723962,   0.        ,   2.50157319],
+       [ -2.77777778,   0.        ,   0.        ],
+       [  0.        ,   0.        ,   2.5       ],
+       [  0.        ,   0.        ,   0.        ],
+       [-13.88888889,   0.        ,   0.        ],
+       [-11.11111111,   0.        ,   0.        ],
+       [-11.11242985,   0.        ,   2.49886401],
+       [ -8.33267928,   0.        ,   2.50076004],
+       [ -8.33333333,   0.        ,   0.        ],
+       [-19.4460819 ,   0.        ,   2.49793057],
+       [-19.44444444,   0.        ,   0.        ],
+       [-16.66666667,   0.        ,   0.        ],
+       [-16.66520802,   0.        ,   2.49523213],
+       [-13.88956469,   0.        ,   2.50438295],
+       [-27.77777778,   0.        ,   0.        ],
+       [-27.77520169,   0.        ,   2.49987997],
+       [-25.00149908,   0.        ,   2.4998617 ],
+       [-25.        ,   0.        ,   0.        ],
+       [-22.22222222,   0.        ,   0.        ],
+       [-22.22340561,   0.        ,   2.50268198],
+       [-11.11203334,   0.        ,   5.00052834],
+       [ -8.33378392,   0.        ,   5.00049418],
+       [ -5.55669757,   0.        ,   5.0021298 ],
+       [-22.2243406 ,   0.        ,   5.00202455],
+       [-19.44433492,   0.        ,   4.99559279],
+       [-16.66689107,   0.        ,   5.00011596],
+       [-13.888296  ,   0.        ,   5.00380833],
+       [-33.33499747,   0.        ,   5.00110421],
+       [-30.55395637,   0.        ,   5.00009915],
+       [-27.77613903,   0.        ,   5.00017355],
+       [-25.00048794,   0.        ,   5.00119079],
+       [-44.44510338,   0.        ,   4.99725083],
+       [-41.66513155,   0.        ,   5.00215753],
+       [-38.88970941,   0.        ,   4.99936348],
+       [-36.11007851,   0.        ,   4.99995868],
+       [-44.44418057,   0.        ,   7.49868753],
+       [-44.44444444,   0.        ,  10.        ],
+       [ -2.77861289,   0.        ,   5.0017605 ],
+       [  0.        ,   0.        ,   5.        ],
+       [-36.11111111,   0.        ,  10.        ],
+       [-36.11366854,   0.        ,   7.50129616],
+       [-38.88757587,   0.        ,   7.4972426 ],
+       [-38.88888889,   0.        ,  10.        ],
+       [-41.66666667,   0.        ,  10.        ],
+       [-41.66423946,   0.        ,   7.50213925],
+       [-27.77777778,   0.        ,  10.        ],
+       [-30.55555556,   0.        ,  10.        ],
+       [-30.54810006,   0.        ,   7.49930942],
+       [-33.34017081,   0.        ,   7.50098248],
+       [-33.33333333,   0.        ,  10.        ],
+       [-22.22304587,   0.        ,   7.50108819],
+       [-22.22222222,   0.        ,  10.        ],
+       [-25.        ,   0.        ,  10.        ],
+       [-24.99851656,   0.        ,   7.50020742],
+       [-27.77743281,   0.        ,   7.50026327],
+       [-36.11111111,   0.        ,   0.        ],
+       [-33.33333333,   0.        ,   0.        ],
+       [-33.33336587,   0.        ,   2.49978611],
+       [-30.55572253,   0.        ,   2.49986226],
+       [-30.55555556,   0.        ,   0.        ],
+       [-41.66740593,   0.        ,   2.50054752],
+       [-41.66666667,   0.        ,   0.        ],
+       [-38.88888889,   0.        ,   0.        ],
+       [-38.88861358,   0.        ,   2.49857128],
+       [-36.11149952,   0.        ,   2.50056562],
+       [-50.        ,   0.        ,   0.        ],
+       [-47.22381031,   0.        ,   2.49840156],
+       [-50.        ,   0.        ,   2.5       ],
+       [-47.22222222,   0.        ,   0.        ],
+       [-44.44444444,   0.        ,   0.        ],
+       [-44.44433817,   0.        ,   2.49944902]]), element_labels=array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+       18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
+       35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
+       52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68,
+       69, 70, 71, 72], dtype=int32), element_types=array([126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126,
+       126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126,
+       126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126,
+       126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126,
+       126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126,
+       126, 126, 126, 126, 126, 126, 126], dtype=int32), element_nodes=array([79, 88, 81, 80, 37, 50, 44, 30,  0,  1,  2,  3, 30, 44, 45, 31,  3,
+        2,  5,  4, 80, 81, 82, 83, 31, 45, 46, 23, 83, 82, 39, 38, 17, 59,
+       55, 21, 24, 23, 46, 61,  6, 15,  8,  7, 93, 94, 84, 85, 40, 54, 47,
+       43, 85, 84, 87, 86, 43, 47, 48, 33,  7,  8,  9, 10, 33, 48, 49, 36,
+       10,  9,  1,  0, 86, 87, 88, 79, 36, 49, 50, 37, 12, 11, 14, 13, 89,
+       91, 90, 92, 91, 20, 21, 90, 88, 58, 51, 81, 81, 51, 52, 82, 92, 90,
+       94, 93, 82, 52, 53, 39, 13, 14, 15,  6, 39, 53, 54, 40, 16, 18, 17,
+       19, 90, 21, 55, 94, 94, 55, 56, 84, 19, 17, 21, 20, 84, 56, 57, 87,
+       87, 57, 58, 88, 67, 68, 59, 60, 60, 59, 17, 18, 22, 23, 24, 25, 27,
+       25, 24, 26, 26, 24, 61, 62, 11, 62, 61, 14, 28, 37, 30, 29, 63, 64,
+       65, 66, 66, 65, 68, 67, 29, 30, 31, 32, 32, 31, 23, 22, 69, 78, 71,
+       70, 78, 53, 52, 71, 42, 43, 33, 34, 78, 77, 54, 53, 34, 33, 36, 35,
+       72, 51, 58, 64, 71, 52, 51, 72, 65, 57, 56, 68, 70, 71, 72, 73, 65,
+       64, 58, 57, 73, 72, 64, 63, 35, 36, 37, 28, 68, 56, 55, 59, 15, 46,
+       45,  8,  4,  5, 74, 75, 14, 61, 46, 15, 75, 74, 77, 76,  9, 44, 50,
+        1, 38, 39, 40, 41,  9,  8, 45, 44, 41, 40, 43, 42,  2, 49, 48,  5,
+        2,  1, 50, 49, 74, 47, 54, 77, 76, 77, 78, 69, 74,  5, 48, 47],
+      dtype=int32), element_nodes_offsets=array([  0,   4,   8,  12,  16,  20,  24,  28,  32,  36,  40,  44,  48,
+        52,  56,  60,  64,  68,  72,  76,  80,  84,  88,  92,  96, 100,
+       104, 108, 112, 116, 120, 124, 128, 132, 136, 140, 144, 148, 152,
+       156, 160, 164, 168, 172, 176, 180, 184, 188, 192, 196, 200, 204,
+       208, 212, 216, 220, 224, 228, 232, 236, 240, 244, 248, 252, 256,
+       260, 264, 268, 272, 276, 280, 284], dtype=int32))
+  status = <Status.UPTODATE: 'UPTODATE'>
+  store(parent: 'TreeObject') -> 'None'   [method]
+  taper_edges = <EdgePropertyList[TaperEdge] with parent <ModelingPly with id 'ModelingPly.1'>, entries []>
+  thickness_field = None
+  thickness_field_type = <ThicknessFieldType.ABSOLUTE_VALUES: 'absolute_values'>
+  thickness_geometry = None
+  thickness_type = <ThicknessType.NOMINAL: 'nominal'>
+  use_default_draping_mesh_size = True

@@ -1,0 +1,15 @@
+{
+  "_comment_1": "Merge the acp entry INSIDE the existing mcpServers object of your client config. Do not replace the whole file. Claude Desktop: %APPDATA%\\Claude\\claude_desktop_config.json",
+  "_comment_2": "command must be an absolute path to a Python interpreter that has mcp, pydantic and ansys-acp-core installed. Backslashes must be doubled in JSON; forward slashes also work.",
+  "_comment_3": "ACP_BRIDGE_PATH points at acp_gui_bridge.py. It only shapes the error message the server prints when the live bridge is unreachable, but keeping it correct saves a lookup later.",
+  "_comment_4": "Restart the client completely after editing - MCP servers and the tool list are read once at startup.",
+  "mcpServers": {
+    "acp": {
+      "command": "C:/path/to/python.exe",
+      "args": ["C:/path/to/acp-mcp-agent/acp_mcp.py"],
+      "env": {
+        "ACP_BRIDGE_PATH": "C:/path/to/acp-mcp-agent/acp_gui_bridge.py"
+      }
+    }
+  }
+}

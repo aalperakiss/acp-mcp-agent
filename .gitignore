@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# ANSYS / ACP artefacts - never commit model or solver data
+*.acph5
+*.h5
+*.cdb
+*.rst
+*.rth
+*.db
+*.mechdb
+*.wbpj
+*_files/
+ACP-Pre*/
+ACP-Post*/
+
+# Local machine config (contains absolute paths)
+mcp_config.json
+claude_desktop_config.json
+.env
+
+# Probe output regenerated per installation (reference copies live in docs/)
+_scope_probe.txt
+*.local.txt
+probes/pyacp_api_report.txt
+probes/*_out.txt
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

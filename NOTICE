@@ -1,0 +1,24 @@
+acp-mcp-agent
+Copyright 2026 A. Alper Akis
+
+This product includes software developed by A. Alper Akis.
+
+Licensed under the Apache License, Version 2.0. See the LICENSE file
+in the root of this repository for the full terms.
+
+---
+
+Third-party names and trademarks
+
+ANSYS, ACP, Composite PrepPost, Mechanical and Workbench are trademarks
+or registered trademarks of ANSYS, Inc. or its subsidiaries. This project
+is an independent, unofficial integration and is not affiliated with,
+endorsed by, or supported by ANSYS, Inc.
+
+No ANSYS software, source code, documentation or license material is
+distributed with this project. The user must supply their own licensed
+ANSYS installation.
+
+The GUI bridge design (background socket listener handing work to the
+application's main thread) follows the pattern used by the open-source
+Blender-MCP project. No code from that project is included here.
