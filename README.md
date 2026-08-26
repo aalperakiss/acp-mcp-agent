@@ -5,7 +5,11 @@
 ![Platform: Windows](https://img.shields.io/badge/platform-Windows-lightgrey)
 ![ANSYS 2026 R1](https://img.shields.io/badge/ANSYS-2026%20R1-orange)
 
-An MCP server that lets an LLM agent drive **ANSYS Composite PrepPost** —
+
+
+## Overview
+
+An MCP server that lets an LLM agent drive **ANSYS Composite Pre [ACP(Pre)]** —
 read a lay-up, change fibre angles and layer counts, check manufacturing rules,
 and export the analysis model and composite definitions.
 
@@ -29,16 +33,24 @@ stay where they already work:
 
 ```
 acp-mcp-agent (lay-up) ──► analysis model ──► Mechanical (BC / mesh / solve)
-                       ──► composite defs ──► PyDPF-Composites (IRF)
+                       ──► composite defs ──► PyDPF-Composites
 ```
 
 ---
+
+## Live Demo
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=4cJam4MetPY">
+    <img src="https://img.youtube.com/vi/4cJam4MetPY/maxresdefault.jpg" width="640" alt="MCP ACP Alper — demo">
+  </a>
+</p>
 
 ## Requirements
 
 | | |
 |---|---|
-| ANSYS | with ACP. Developed and verified against ( verifed **2026 R1** (`AWP_ROOT261`) |
+| ANSYS | with ACP. Developed and tested with **2026 R1** (`AWP_ROOT261`) |
 | Python | 3.10+ for the server side — whichever interpreter your MCP client launches |
 | Packages | `mcp`, `pydantic`, `ansys-acp-core` (see `requirements.txt`) |
 | OS | Windows. The bridge itself is portable, the documented paths are not |
@@ -48,7 +60,7 @@ ANSYS is not a pip package. `ansys-acp-core` starts the ACP gRPC server from a
 local ANSYS installation; without one, nothing here runs.
 
 The GUI bridge needs nothing installed: it runs inside ACP-Pre's own embedded
-Python (3.10 on 2026 R1) and uses only the standard library plus wx, which
+Python (3.10 on tested-2026 R1) and uses only the standard library plus wx, which
 ACP-Pre already provides.
 
 ### Paths
