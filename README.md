@@ -5,7 +5,7 @@
 ![Platform: Windows](https://img.shields.io/badge/platform-Windows-lightgrey)
 ![ANSYS 2026 R1](https://img.shields.io/badge/ANSYS-2026%20R1-orange)
 
-An MCP server that lets an LLM agent drive **ANSYS ACP (Composite PrepPost)** —
+An MCP server that lets an LLM agent drive **ANSYS Composite PrepPost** —
 read a lay-up, change fibre angles and layer counts, check manufacturing rules,
 and export the analysis model and composite definitions.
 
