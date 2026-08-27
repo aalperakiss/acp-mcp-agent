@@ -288,18 +288,10 @@ explicitly when you want intermediate orientations.
 - Ply creation exists on the live GUI side only (`acp_gui_add_ply`). The
   headless `acp_*` tools still edit existing plies only, so a model driven
   through PyACP must be built with enough spare plies up front.
-- No delete-ply tool yet. Deactivate a ply with `acp_gui_set_ply_counts` set to 0.
 - Mass is not reported by the export tool; the attribute path varies too much
   between releases to guess. Add it once your probe report shows the real one.
 - Verified against one ANSYS release only. The `CANDIDATES` mechanism exists
   because older and newer releases will differ.
-- No tests. The verification path is the probe plus the manual tool sequence in
-  steps 4 and 5.
-- Optimisation loop not started. Three decisions still open: whether the
-  optimiser calls ACP directly or through MCP, whether the solve runs batch or
-  through a Mechanical MCP, and which failure criteria set the constraint.
-  Budget for a surrogate — one evaluation is one full solve, and 200 of those is
-  a working day at minimum.
 
 ## Security note
 
